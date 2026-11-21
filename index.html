@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 5 months Anniversary Dhana ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at top, #2d0826, #0d020b);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      padding: 15px;
+    }
+
+    /* Ambient floating particles */
+    .bg-particle {
+      position: fixed;
+      pointer-events: none;
+      animation: floatUp linear infinite;
+      opacity: 0.5;
+      z-index: 0;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(105vh) scale(0.8); opacity: 0; }
+      30% { opacity: 0.7; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 117, 160, 0.35);
+      box-shadow: 0 15px 45px rgba(255, 30, 100, 0.25);
+      border-radius: 28px;
+      padding: 32px 22px;
+      width: 100%;
+      max-width: 410px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      animation: cardEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes cardEnter {
+      from { opacity: 0; transform: translateY(25px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .hidden { display: none !important; }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #ff5e98;
+      text-shadow: 0 0 15px rgba(255, 94, 152, 0.6);
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #ffd1e1;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+    p { font-size: 0.95rem; line-height: 1.6; color: #f4e6f0; margin-bottom: 18px; }
+
+    .btn {
+      background: linear-gradient(135deg, #ff2a78, #ff6b6b);
+      border: none;
+      padding: 13px 28px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255, 42, 120, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin: 5px;
+    }
+    .btn:active { transform: scale(0.94); }
+    .btn-no {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: none;
+    }
+
+    /* Slide 1: Heart Tree SVG Animation */
+    .tree-box { height: 190px; display: flex; justify-content: center; align-items: center; margin: 10px 0; }
+    .heart-leaf {
+      transform-origin: center;
+      animation: popLeaf 0.8s ease forwards;
+      opacity: 0;
+    }
+    @keyframes popLeaf {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Slide 2: Seconds Counter */
+    .seconds-box {
+      background: rgba(255, 42, 120, 0.14);
+      border: 1px solid rgba(255, 117, 160, 0.4);
+      border-radius: 18px;
+      padding: 18px 10px;
+      margin: 15px 0;
+    }
+    .sec-number {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #ffd166;
+      letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(255, 209, 102, 0.5);
+    }
+
+    /* Slide 4: Envelope & Typewriter Letter */
+    .envelope {
+      background: linear-gradient(145deg, #fff5f8, #ffe3ec);
+      color: #3a1026;
+      border-radius: 16px;
+      padding: 20px 18px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      margin-bottom: 18px;
+      min-height: 180px;
+      position: relative;
+    }
+    .envelope-header {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      color: #d61c5e;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #f3a6c0;
+      padding-bottom: 5px;
+    }
+    #typedLetter {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #4a1530;
+      white-space: pre-line;
+    }
+
+    /* Slide 5: Love Jar Notes */
+    .note-pill {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px dashed rgba(255, 158, 189, 0.5);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.92rem;
+    }
+    .note-pill.revealed {
+      background: linear-gradient(135deg, rgba(255,42,120,0.28), rgba(255,107,107,0.22));
+      border-style: solid;
+      transform: scale(1.02);
+    }
+
+    /* Slide 6: Heart Photo Collage (Will You Be Mine) */
+    .photo-stage {
+      position: relative;
+      width: 240px;
+      height: 220px;
+      margin: 15px auto 20px;
+      cursor: pointer;
+    }
+    .heart-frame {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ff4d8d;
+      box-shadow: 0 0 25px rgba(255, 77, 141, 0.65);
+      animation: pulseHeart 2.2s infinite;
+    }
+    .heart-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .upload-badge {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.72);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    @keyframes pulseHeart {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    /* Virtual Hug Bounce */
+    .hug-emoji {
+      font-size: 3.6rem;
+      display: inline-block;
+      animation: hugBounce 1.4s infinite alternate;
+      margin: 8px 0;
+    }
+    @keyframes hugBounce {
+      from { transform: scale(0.95) rotate(-4deg); }
+      to { transform: scale(1.12) rotate(4deg); }
+    }
+
+    /* Finale Glow */
+    .dhana-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.9rem;
+      background: linear-gradient(to right, #ff75a0, #ffd166, #ff4d8d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowPulse 1.8s infinite alternate;
+      margin: 12px 0;
+    }
+    @keyframes glowPulse {
+      from { filter: drop-shadow(0 0 6px rgba(255, 117, 160, 0.5)); }
+      to { filter: drop-shadow(0 0 18px rgba(255, 209, 102, 0.9)); }
+    }
+
+    .burst {
+      position: fixed;
+      pointer-events: none;
+      font-size: 24px;
+      z-index: 99;
+      animation: fallBurst 3.2s linear forwards;
+    }
+    @keyframes fallBurst {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: 5th Anniversary Heart Tree -->
+  <div class="card" id="slide1">
+    <div class="subtitle">Celebrating 5 Years of Us ✨</div>
+    <h1>Happy 5th Anniversary</h1>
+    <div class="tree-box">
+      <svg width="200" height="180" viewBox="0 0 200 180">
+        <path d="M100 170 Q98 120 100 90 M100 125 L75 100 M100 115 L128 92" stroke="#ffb3c6" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <text x="85" y="75" font-size="26" class="heart-leaf" style="animation-delay:0.2s">💖</text>
+        <text x="60" y="95" font-size="22" class="heart-leaf" style="animation-delay:0.4s">❤️</text>
+        <text x="115" y="90" font-size="24" class="heart-leaf" style="animation-delay:0.6s">💗</text>
+        <text x="72" y="55" font-size="22" class="heart-leaf" style="animation-delay:0.8s">🌸</text>
+        <text x="108" y="55" font-size="22" class="heart-leaf" style="animation-delay:1.0s">💕</text>
+        <text x="90" y="40" font-size="24" class="heart-leaf" style="animation-delay:1.2s">✨</text>
+      </svg>
+    </div>
+    <p>5 years of laughter, patience, and loving you more with every passing moment.</p>
+    <button class="btn" onclick="goSlide(2)">Open Our Story ✨</button>
+  </div>
+
+  <!-- SLIDE 2: 12096000 Seconds Counter -->
+  <div class="card hidden" id="slide2">
+    <div class="subtitle">Every Single Heartbeat</div>
+    <h1>Our Time Together</h1>
+    <div class="seconds-box">
+      <div style="font-size:0.85rem; color:#ffd1e1;">We have successfully completed</div>
+      <div class="sec-number" id="secCounter">0</div>
+      <div style="font-size:1rem; font-weight:600; color:#ff75a0; margin-top:4px;">Seconds Complete Heichi ❤️</div>
+    </div>
+    <p>And every single second with you has been the best part of my life. Ready for forever?</p>
+    <button class="btn" onclick="goSlide(3)">Next Surprise 💌</button>
+  </div>
+
+  <!-- SLIDE 3: Interactive YES / NO Game (From Video 3) -->
+  <div class="card hidden" id="slide3">
+    <div class="hug-emoji" id="gameEmoji">🧸💝</div>
+    <h1 id="gameTitle">A Question For You...</h1>
+    <p id="gameText">I made something special for our 5th Anniversary. Do you promise to stay by my side forever?</p>
+    <div>
+      <button class="btn" onclick="handleYes()">YES, Always! ❤️</button>
+      <button class="btn btn-no" id="noBtn" onclick="handleNo()">No 🙈</button>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Typewriter Love Letter (From Video 2) -->
+  <div class="card hidden" id="slide4">
+    <div class="subtitle">Written From My Heart</div>
+    <h1>A Letter For You 💌</h1>
+    <div class="envelope">
+      <div class="envelope-header">My Dearest Dhana,</div>
+      <div id="typedLetter"></div>
+    </div>
+    <button class="btn" onclick="goSlide(5)">Open Love Jar ✨</button>
+  </div>
+
+  <!-- SLIDE 5: Tap to Reveal Love Notes (From Video 1 & 2) -->
+  <div class="card hidden" id="slide5">
+    <div class="subtitle">Tap Each Note To Reveal</div>
+    <h1>Little Notes For You</h1>
+    <div class="note-pill" onclick="revealNote(this, '🌸 You are the first person I want to share every happy news with.')">Tap to open Note #1 💖</div>
+    <div class="note-pill" onclick="revealNote(this, '✨ Even on my hardest days, one smile from you fixes everything.')">Tap to open Note #2 💖</div>
+    <div class="note-pill" onclick="revealNote(this, '♾️ If I had to live these 5 years all over again, I would still choose you.')">Tap to open Note #3 💖</div>
+    <button class="btn" style="margin-top:10px;" onclick="goSlide(6)">One Special Question 💍</button>
+  </div>
+
+  <!-- SLIDE 6: Will You Be Mine + Custom Photo (From Photo 2) -->
+  <div class="card hidden" id="slide6">
+    <h1>Will You Be Mine?</h1>
+    <div class="subtitle">Forever & Beyond 💞</div>
+    <div class="photo-stage" onclick="document.getElementById('photoInput').click()">
+      <div class="heart-frame">
+        <!-- Nija photo link eithi dei paribe ba tap kari gallery ru choose karibe -->
+        <img id="couplePhoto" src="IMG_20261030_142707.jpg" />
+      </div>
+      <div class="upload-badge">📸 Tap here to add our photo</div>
+      <input type="file" id="photoInput" accept="image/*" class="hidden" onchange="loadUserPhoto(event)" />
+    </div>
+    <p>5 years down, a lifetime to go. Will you keep being mine in every universe?</p>
+    <button class="btn" onclick="triggerFinale()">Yes, Forever Yours! ❤️</button>
+  </div>
+
+  <!-- SLIDE 7: Grand Finale - I Love You Dhana -->
+  <div class="card hidden" id="slide7">
+    <div class="subtitle">Virtual Hug For Ya! 🤗</div>
+    <div class="hug-emoji">🧸❤️🐻</div>
+    <h1>Happy 5th Anniversary</h1>
+    <div class="dhana-title">I Love You Dhana ❤️</div>
+    <p>Thank you for 12,096,000+ magical seconds and 5 unforgettable years. You are my today and all of my tomorrows! 💫</p>
+    <button class="btn" onclick="celebrateBurst()">Send More Love 🎉</button>
+    <button class="btn btn-no" onclick="goSlide(1)">Replay 🔄</button>
+  </div>
+
+  <script>
+    // Background ambient floating hearts
+    setInterval(() => {
+      const p = document.createElement('div');
+      p.className = 'bg-particle';
+      p.innerText = ['❤️', '✨', '🌸', '💕'][Math.floor(Math.random() * 4)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.fontSize = (14 + Math.random() * 14) + 'px';
+      p.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 9000);
+    }, 600);
+
+    let liveTimer = null;
+
+    function goSlide(n) {
+      document.querySelectorAll('.card').forEach(c => c.classList.add('hidden'));
+      document.getElementById('slide' + n).classList.remove('hidden');
+
+      if (n === 2) startSecondsAnimation();
+      if (n === 4) startTypewriter();
+    }
+
+    // Slide 2: Animate up to 12096000 and keep ticking live!
+    function startSecondsAnimation() {
+      if (liveTimer) clearInterval(liveTimer);
+      const target = 12096000;
+      let current = 12090000;
+      const el = document.getElementById('secCounter');
+
+      const fastCount = setInterval(() => {
+        current += 215;
+        if (current >= target) {
+          current = target;
+          el.innerText = current.toLocaleString('en-IN');
+          clearInterval(fastCount);
+          // Live ticking every 1 second after reaching 12,096,000
+          liveTimer = setInterval(() => {
+            current++;
+            el.innerText = current.toLocaleString('en-IN');
+          }, 1000);
+        } else {
+          el.innerText = current.toLocaleString('en-IN');
+        }
+      }, 30);
+    }
+
+    // Slide 3: Funny NO button reaction
+    let noCount = 0;
+    function handleNo() {
+      noCount++;
+      const emoji = document.getElementById('gameEmoji');
+      const title = document.getElementById('gameTitle');
+      const text = document.getElementById('gameText');
+      if (noCount === 1) {
+        emoji.innerText = '🥺💔';
+        title.innerText = 'Why did you click No?!';
+        text.innerText = 'Are you sure? Think again! Click YES right now! 😤❤️';
+      } else {
+        emoji.innerText = '😭🧸';
+        title.innerText = 'No option disabled!';
+        text.innerText = 'You are stuck with me forever anyway! Tap YES! ❤️';
+        document.getElementById('noBtn').style.display = 'none';
+      }
+    }
+
+    function handleYes() {
+      celebrateBurst();
+      goSlide(4);
+    }
+
+    // Slide 4: Typewriter Letter
+    const letterContent = `Happy 5th Anniversary, my love!\n\nFive years ago, my life changed forever when you walked into it. Through every laugh, every late-night talk, and every challenge, you have been my peace and my biggest strength.\n\nThank you for loving me the way you do. Here is to many more years of growing old together.\n\nAlways yours ❤️`;
+    let typeIdx = 0;
+    let typeInterval = null;
+
+    function startTypewriter() {
+      const box = document.getElementById('typedLetter');
+      box.innerText = '';
+      typeIdx = 0;
+      if (typeInterval) clearInterval(typeInterval);
+      typeInterval = setInterval(() => {
+        if (typeIdx < letterContent.length) {
+          box.innerText += letterContent.charAt(typeIdx);
+          typeIdx++;
+        } else {
+          clearInterval(typeInterval);
+        }
+      }, 35);
+    }
+
+    // Slide 5: Love Jar
+    function revealNote(el, msg) {
+      el.innerText = msg;
+      el.classList.add('revealed');
+    }
+
+    // Slide 6: Load user's couple photo from phone gallery
+    function loadUserPhoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('couplePhoto').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    // Slide 7: Grand Finale
+    function triggerFinale() {
+      goSlide(7);
+      celebrateBurst();
+    }
+
+    function celebrateBurst() {
+      const icons = ['❤️', '💖', '🌸', '✨', '🌹', '🎉', '💞'];
+      for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+          const b = document.createElement('div');
+          b.className = 'burst';
+          b.innerText = icons[Math.floor(Math.random() * icons.length)];
+          b.style.left = Math.random() * 100 + 'vw';
+          document.body.appendChild(b);
+          setTimeout(() => b.remove(), 3200);
+        }, i * 70);
+      }
+    }
+  </script>
+</body>
+</html>
