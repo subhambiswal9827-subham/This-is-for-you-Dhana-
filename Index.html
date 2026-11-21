@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our 5th Anniversary ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Georgia',serif;
+    background:#fff0f5;
+    color:#713047;
+    overflow-x:hidden;
+    text-align:center;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+section{
+    min-height:100vh;
+    padding:65px 18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+h1{
+    font-size:clamp(40px,9vw,65px);
+    color:#c72e60;
+    margin:20px 0;
+}
+
+h2{
+    font-size:clamp(30px,7vw,45px);
+    color:#c72e60;
+    margin-bottom:25px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    background:#d6336c;
+    color:white;
+    border-radius:30px;
+    font-size:17px;
+    cursor:pointer;
+    margin-top:25px;
+    box-shadow:0 5px 20px #d6336c55;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* BACKGROUND HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    color:#ff5c8a;
+    animation:heartFloat 8s linear infinite;
+    z-index:0;
+    pointer-events:none;
+}
+
+@keyframes heartFloat{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    20%{opacity:1;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* FIRST PAGE */
+
+.hero{
+    background:linear-gradient(135deg,#ffe0eb,#fff5f7,#ffd0df);
+}
+
+.hero-box{
+    padding:35px 20px;
+    border-radius:30px;
+    background:#ffffffb8;
+    box-shadow:0 10px 40px #c72e6030;
+    z-index:1;
+}
+
+.subtitle{
+    letter-spacing:4px;
+    color:#b52c58;
+    font-size:13px;
+}
+
+/* TEDDY */
+
+.teddy{
+    font-size:120px;
+    animation:hug 2s infinite;
+    margin:20px;
+}
+
+@keyframes hug{
+    0%,100%{transform:scale(1) rotate(-5deg);}
+    50%{transform:scale(1.15) rotate(5deg);}
+}
+
+/* COUNTER */
+
+.counter{
+    background:white;
+    padding:35px 25px;
+    border-radius:25px;
+    box-shadow:0 10px 35px #c72e6020;
+}
+
+.seconds{
+    font-family:Arial,sans-serif;
+    font-size:clamp(35px,8vw,55px);
+    color:#e63970;
+    font-weight:bold;
+}
+
+/* PHOTO GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    width:100%;
+    max-width:950px;
+    margin-top:30px;
+}
+
+.photo{
+    background:white;
+    padding:10px 10px 20px;
+    border-radius:15px;
+    box-shadow:0 8px 25px #9b365222;
+    transition:.4s;
+}
+
+.photo:nth-child(1){transform:rotate(-3deg);}
+.photo:nth-child(2){transform:rotate(2deg);}
+.photo:nth-child(3){transform:rotate(-2deg);}
+
+.photo:hover{
+    transform:translateY(-10px) rotate(0);
+}
+
+.photo img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.caption{
+    margin-top:12px;
+    font-style:italic;
+}
+
+/* WILL YOU BE MINE */
+
+.love-photos{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.love-photos img{
+    width:min(40%,250px);
+    height:340px;
+    object-fit:cover;
+    border-radius:50% 50% 15px 15px;
+    border:7px solid white;
+    box-shadow:0 10px 30px #d6336c40;
+    animation:photoGlow 3s infinite alternate;
+}
+
+@keyframes photoGlow{
+    from{box-shadow:0 5px 15px #d6336c30;}
+    to{box-shadow:0 10px 35px #d6336c80;}
+}
+
+/* MESSAGES */
+
+.message{
+    max-width:700px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px #c72e6020;
+    line-height:2;
+    font-size:19px;
+    margin:20px auto;
+}
+
+/* FINAL */
+
+.final{
+    background:linear-gradient(135deg,#ffb6cc,#ffe6ed,#ffcadb);
+}
+
+.final h1{
+    font-size:clamp(45px,11vw,85px);
+    animation:finalPulse 2s infinite;
+}
+
+@keyframes finalPulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+}
+
+footer{
+    padding:25px;
+    background:#d6336c;
+    color:white;
+}
+
+@media(max-width:650px){
+    .gallery{
+        grid-template-columns:1fr;
+        max-width:350px;
+    }
+
+    .photo img{
+        height:380px;
+    }
+
+    .love-photos img{
+        width:42%;
+        height:250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING HEARTS -->
+
+<div id="hearts"></div>
+
+<!-- PAGE 1 -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<div class="subtitle">A SPECIAL DAY FOR US ❤️</div>
+
+<h1>Our Love Story</h1>
+
+<p>
+Five beautiful years of memories,
+smiles, happiness and togetherness.
+</p>
+
+<h2>Happy 5th Anniversary ❤️</h2>
+
+<button onclick="document.getElementById('hug').scrollIntoView()">
+Open Your Surprise 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- PAGE 2 VIRTUAL HUG -->
+
+<section id="hug">
+
+<div class="subtitle">A LITTLE SURPRISE</div>
+
+<h2>Virtual Hug For You!</h2>
+
+<div class="teddy">🧸</div>
+
+<h2>I MISS YOU ❤️</h2>
+
+<p>
+If I could send you one thing right now,
+it would be the warmest hug in the world.
+</p>
+
+<p>
+No matter how far we are,
+you are always remembered with a smile.
+💕
+</p>
+
+</section>
+
+
+<!-- PAGE 3 DAYS OF LOVE -->
+
+<section>
+
+<div class="subtitle">OUR BEAUTIFUL JOURNEY</div>
+
+<h2>Days Of Love ❤️</h2>
+
+<p>
+Look how much time we have spent
+creating beautiful memories together.
+</p>
+
+<div class="counter">
+
+<div class="seconds">12,096,000</div>
+
+<p>SECONDS OF LOVE COMPLETED ❤️</p>
+
+<h2>5 Years Together</h2>
+
+</div>
+
+<p style="margin-top:30px">
+Every second has its own little memory.
+And every memory is precious. 💗
+</p>
+
+</section>
+
+
+<!-- PAGE 4 OUR MEMORIES -->
+
+<section>
+
+<div class="subtitle">OUR SPECIAL MOMENTS</div>
+
+<h2>Our Memories 📸</h2>
+
+<p>
+Some moments become memories.
+Some memories become forever.
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="photo1.jpg" alt="Our memory 1">
+<div class="caption">Our Beautiful Moment ❤️</div>
+</div>
+
+<div class="photo">
+<img src="photo2.jpg" alt="Our memory 2">
+<div class="caption">A Memory To Keep 💕</div>
+</div>
+
+<div class="photo">
+<img src="photo3.jpg" alt="Our memory 3">
+<div class="caption">Together Is Beautiful 🥰</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 5 WILL YOU BE MINE -->
+
+<section>
+
+<div class="subtitle">ONE SPECIAL QUESTION</div>
+
+<h2>Will You Be Mine? ❤️</h2>
+
+<p>
+Out of all the beautiful moments in life,
+my favourite memories are the ones we share.
+</p>
+
+<div class="love-photos">
+
+<img src="photo2.jpg" alt="Our photo">
+
+<img src="photo3.jpg" alt="Our photo">
+
+</div>
+
+<h2>Forever & Always 💍</h2>
+
+<p>
+I don't need a perfect story.
+I just want more beautiful memories,
+more smiles and more happy moments.
+</p>
+
+</section>
+
+
+<!-- PAGE 6 LOVE MESSAGE -->
+
+<section>
+
+<div class="subtitle">FROM MY HEART</div>
+
+<h2>For You, Dhana 💗</h2>
+
+<div class="message">
+
+Five years have passed,
+but the memories still feel special.
+
+Thank you for every smile,
+every beautiful moment
+and every little memory.
+
+You are an important part
+of my story.
+
+I hope our journey continues
+with happiness, kindness
+and countless beautiful memories.
+
+Happy 5th Anniversary, Dhana! ❤️
+
+</div>
+
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section class="final">
+
+<div class="subtitle">MY LAST SURPRISE</div>
+
+<h1>I LOVE YOU</h1>
+
+<h1>DHANA ❤️</h1>
+
+<p>
+Five years of memories.
+A lifetime of beautiful moments ahead.
+</p>
+
+<button onclick="showHearts()">
+Tap For A Surprise ❤️
+</button>
+
+</section>
+
+
+<footer>
+MADE WITH LOVE ❤️ <br>
+OUR 5TH ANNIVERSARY
+</footer>
+
+
+<script>
+
+/* FLOATING HEART ANIMATION */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["❤️","💕","💗","💖","💘"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+setInterval(createHeart,350);
+
+
+/* FINAL SURPRISE */
+
+function showHearts(){
+
+for(let i=0;i<60;i++){
+
+setTimeout(createHeart,i*70);
+
+}
+
+alert("I LOVE YOU DHANA ❤️");
+
+}
+
+</script>
+
+</body>
+</html>
